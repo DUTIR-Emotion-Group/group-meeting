@@ -9,10 +9,9 @@ learning_rate 学习率
 训练中使用的损失是交叉熵
 优化方法为梯度下降法
 数据集来自网络，总共100组数据，二分类，特征维度为2
-
 训练集和测试机的比例为7:3，随机进行划分
+
 实验结果如下：
-=================================== Running My Logistic Regression ===================================
 precision:0.8461538461538461
 recall:0.9166666666666666
 f1:0.8799999999999999
@@ -21,9 +20,9 @@ accracy:0.9
 
 ![image](https://github.com/DUTIR-Emotion-Group/group-meeting/blob/master/LR_zhoufengqing/img/myLR_result.png)
 
+
 下面是调用sk-learn中实现的LogisticRegression模型进行的实验
 实验结果如下：
-=================================== Running sk-learn Logistic Regression ===================================
 precision:1.0
 recall:0.9166666666666666
 f1:0.9565217391304348
