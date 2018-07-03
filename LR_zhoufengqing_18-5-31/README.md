@@ -18,7 +18,7 @@ f1:0.8799999999999999<br>
 accracy:0.9<br>
 可视化结果如下：<br>
 
-![image](https://github.com/DUTIR-Emotion-Group/group-meeting/blob/master/LR_zhoufengqing/img/myLR_result.png)
+![image](https://github.com/DUTIR-Emotion-Group/group-meeting/blob/master/LR_zhoufengqing_18-5-31/img/myLR_result.png)
 
 
 下面是调用sk-learn中实现的LogisticRegression模型进行的实验<br>
@@ -29,7 +29,7 @@ f1:0.9565217391304348<br>
 accracy:0.9666666666666667<br>
 可视化结果如下：<br>
 
-![image](https://github.com/DUTIR-Emotion-Group/group-meeting/blob/master/LR_zhoufengqing/img/officialLR_result.png)
+![image](https://github.com/DUTIR-Emotion-Group/group-meeting/blob/master/LR_zhoufengqing_18-5-31/img/officialLR_result.png)
 
 分析：<br>
 1.由于自己实现的代码没有进行参数调节(batch_size=10,epoch=100,learning_rate = 0.1),各个p、r、f指标都略低于sk-learning中默认参数的LR模型，
