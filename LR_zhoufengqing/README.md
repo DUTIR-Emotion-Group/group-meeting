@@ -18,8 +18,8 @@ recall:0.9166666666666666
 f1:0.8799999999999999
 accracy:0.9
 可视化结果如下：
-![image](https://github.com/DUTIR-Emotion-Group/group-meeting/blob/master/LR_zhoufengqing/img/myLR_result.png)
 
+![image](https://github.com/DUTIR-Emotion-Group/group-meeting/blob/master/LR_zhoufengqing/img/myLR_result.png)
 
 下面是调用sk-learn中实现的LogisticRegression模型进行的实验
 实验结果如下：
@@ -29,6 +29,7 @@ recall:0.9166666666666666
 f1:0.9565217391304348
 accracy:0.9666666666666667
 可视化结果如下：
+
 ![image](https://github.com/DUTIR-Emotion-Group/group-meeting/blob/master/LR_zhoufengqing/img/officialLR_result.png)
 
 分析：
