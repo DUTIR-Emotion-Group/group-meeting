@@ -11,23 +11,22 @@ learning_rate 学习率<br>
 数据集来自网络，总共100组数据，二分类，特征维度为2<br>
 训练集和测试机的比例为7:3，随机进行划分<br>
 <br>
-实验结果如下：<br>
-precision:0.846153846153846<br>
-recall:0.9166666666666666<br>
-f1:0.8799999999999999<br>
-accracy:0.9<br>
-可视化结果如下：<br>
-
+采用5折交叉验证实验结果如下：<br>
+precision:1.0       &nbsp;&nbsp;&nbsp;       5-fold:[ 1.  1.  1.  1.  1.]<br>
+recall:0.8568  &nbsp;&nbsp;&nbsp;         5-fold:[ 0.91666669  0.75        0.8888889   0.9285714   0.80000001]<br>
+f1:0.9213  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5-fold:[ 0.95652175  0.85714287  0.94117647  0.96296299  0.8888889 ]<br>
+accuracy:0.93	   &nbsp;&nbsp;   5-fold:[ 0.94999999  0.89999998  0.94999999  0.94999999  0.89999998]<br>
+选取单个实验结果可视化如下：<br>
 ![image](https://github.com/DUTIR-Emotion-Group/group-meeting/blob/master/LR_zhoufengqing_18-5-31/img/myLR_result.png)
 
 
 下面是调用sk-learn中实现的LogisticRegression模型进行的实验<br>
 实验结果如下：<br>
-precision:1.0<br>
-recall:0.9166666666666666<br>
-f1:0.9565217391304348<br>
-accracy:0.9666666666666667<br>
-可视化结果如下：<br>
+precision	:1.0	 &nbsp;&nbsp;&nbsp;   5-fold:[ 1.  1.  1.  1.  1.]<br>
+recall:0.8933	  &nbsp;&nbsp;&nbsp;     5-fold:[ 0.91666669  0.75        1.          1.          0.80000001]<br>
+f1:0.9405	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5-fold:[ 0.95652175  0.85714287  1.          1.          0.8888889 ]<br>
+accuracy:0.95	     &nbsp;&nbsp;  5-fold:[ 0.94999999  0.89999998  1.          1.          0.89999998]<br>
+选取单个实验结果可视化如下：<br>
 
 ![image](https://github.com/DUTIR-Emotion-Group/group-meeting/blob/master/LR_zhoufengqing_18-5-31/img/officialLR_result.png)
 
