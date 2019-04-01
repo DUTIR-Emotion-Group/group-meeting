@@ -64,9 +64,21 @@ class LSTM:
         return total_loss_sum/self.max_train_length
 
     def test(self):
-        feed_dict = self.get_test_data()
-        loss, accuracy = self.sess.run([self.loss, self.accuracy], feed_dict=feed_dict)
-        return loss, accuracy
+        self.test_pointer = 0
+        self.max_test_length = int(self.test_x.shape[0])
+        flag, feed_dict = self.get_test_batch()
+        total_loss_sum = 0
+        total_corrected_count = 0
+        while flag:
+            batch_accuracy, batch_loss = self.sess.run([self.accuracy, self.loss], feed_dict=feed_dict)
+            total_loss_sum += int(feed_dict[self.input_sentence].shape[0]) * float(batch_loss)
+            total_corrected_count += int(feed_dict[self.input_sentence].shape[0]) * float(batch_accuracy)
+            flag, feed_dict = self.get_test_batch()
+        return total_loss_sum / self.max_test_length,total_corrected_count/self.max_test_length
+        #
+        # feed_dict = self.get_test_data()
+        # loss, accuracy = self.sess.run([self.loss, self.accuracy], feed_dict=feed_dict)
+        # return loss, accuracy
 
     def get_train_batch(self):
         if self.train_pointer < self.max_train_length:
@@ -82,12 +94,20 @@ class LSTM:
             self.train_pointer = 0
             return False, None
 
-    def get_test_data(self):
-        sample = {
-            self.input_sentence: self.test_x,
-            self.input_label: self.test_y
+    def get_test_batch(self):
+        if self.test_pointer < self.max_test_length:
+            begin_index = self.test_pointer
+            self.test_pointer = self.test_pointer + self.batch_size
+            end_index = min(self.test_pointer, self.max_test_length)
+            sample = {
+                self.input_sentence: self.test_x[begin_index:end_index],
+                self.input_label: self.test_y[begin_index:end_index]
             }
-        return sample
+            return True, sample
+        else:
+            self.test_pointer = 0
+            return False, None
+
 
     def run(self):
         self.build_model()
